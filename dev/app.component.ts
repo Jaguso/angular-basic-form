@@ -6,8 +6,16 @@ import {Component} from 'angular2/core';
         <h3
         (click)="onSelect()"
         >{{contact.firstName}} {{contact.lastName}}</h3>
-        <div *ngIf="showDetail === true">
-            Email: {{contact.email}}
+        <div>
+            <ul>
+                <li *ngIf="showDetail === true">
+                Email: {{contact.email}}
+                </li>
+                <li *ngIf="showDetail === false">
+                Address: {{contact.address}}
+                </li>
+            </ul>
+            
         </div>
     `,
 })
@@ -15,12 +23,17 @@ export class AppComponent {
     public contact = {
         firstName: "Hec",
         lastName: "Herrera",
-        email: "hh@gmail.com"
+        email: "hh@gmail.com",
+        address: "sodijv"
     };
 
     public showDetail = false;
 
     onSelect() {
-        this.showDetail = true;
+        if(this.showDetail === false){
+            this.showDetail = true;
+        } else {
+            this.showDetail = false;
+        }
     }
 }
