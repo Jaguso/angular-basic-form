@@ -5,6 +5,7 @@ import {Component} from 'angular2/core';
     template: `
         <h3
         (click)="onSelect()"
+        [class.clicked]="showDetail === true"
         >{{contact.firstName}} {{contact.lastName}}</h3>
         <div>
             <ul>
@@ -18,6 +19,7 @@ import {Component} from 'angular2/core';
             
         </div>
     `,
+    styleUrls: ["../src/css/app.css"]
 })
 export class AppComponent {
     public contact = {
