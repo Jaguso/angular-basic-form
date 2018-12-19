@@ -7,6 +7,7 @@ import {Component} from 'angular2/core';
         (click)="onSelect()"
         [class.clicked]="showDetail === true"
         >{{contact.firstName}} {{contact.lastName}}</h3>
+        <input [(ngModel)]="contact.firstName" type="text">
         <div>
             <ul>
                 <li *ngIf="showDetail === true">
@@ -16,7 +17,6 @@ import {Component} from 'angular2/core';
                 Address: {{contact.address}}
                 </li>
             </ul>
-            
         </div>
     `,
     styleUrls: ["../src/css/app.css"]
